@@ -87,6 +87,10 @@ module.exports = function ShellCtrl($scope) {
         $scope.$digest()
       })
   }
+
+  $scope.runGetGoogleAccounts = function() {
+      $scope.run('dumpsys content 2>/dev/null | sed -n \"s/^Account \\([^ ]*\\) .*com.google\\$/\\1/p\"')
+    }
   // WANDERA CUSTOM - END
 
   $scope.clear = function() {
